@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img"
+    aria-label="Shikhar Secondary School logo">
+    <defs>
+        <path id="textPathTop" d="M250,60 A190,190 0 1,1 249.9,60" />
+        <path id="textPathBottom" d="M250,440 A190,190 0 1,0 249.9,440" />
+    </defs>
+    <circle cx="250" cy="250" r="230" fill="none" stroke="#2646de" stroke-width="20" />
+    <circle cx="250" cy="250" r="200" fill="none" stroke="#2646de" stroke-width="10" />
+    <text font-family="Poppins, 'Mukta', sans-serif" font-size="32" fill="#2646de" letter-spacing="4">
+        <textPath href="#textPathTop" startOffset="50%" text-anchor="middle">
+            Shikhar Secondary School
+        </textPath>
+    </text>
+    <text font-family="Poppins, 'Mukta', sans-serif" font-size="28" fill="#2646de" letter-spacing="3">
+        <textPath href="#textPathBottom" startOffset="50%" text-anchor="middle">
+            Bheriganga-11 Ramghat Surkhet
+        </textPath>
+    </text>
+    <polygon points="250,130 325,250 250,370 175,250" fill="none" stroke="#2646de" stroke-width="8" />
+    <polygon points="250,110 350,250 250,390 150,250" fill="none" stroke="#2646de" stroke-width="6" opacity="0.6" />
+    <g transform="translate(250 250)">
+        <path d="M-60 -20 L-10 -20 Q0 -10 10 -20 L60 -20 L60 40 Q20 65 -20 40 L-60 40 Z" fill="none"
+            stroke="#2646de" stroke-width="6" stroke-linejoin="round" />
+        <path d="M-10 -20 L-10 40" stroke="#2646de" stroke-width="4" />
+        <path d="M10 -20 L10 40" stroke="#2646de" stroke-width="4" />
+        <path d="M-45 5 L-5 20" stroke="#2646de" stroke-width="4" stroke-linecap="round" />
+        <path d="M45 5 L5 20" stroke="#2646de" stroke-width="4" stroke-linecap="round" />
+    </g>
+    <text x="180" y="315" font-family="Poppins, 'Mukta', sans-serif" font-size="24" fill="#2646de"
+        letter-spacing="2">Estd:</text>
+    <text x="300" y="315" font-family="Poppins, 'Mukta', sans-serif" font-size="24" fill="#2646de"
+        letter-spacing="2">2028</text>
+    <g fill="#2646de">
+        <polygon points="80,250 92,270 115,275 98,290 102,315 80,304 58,315 62,290 45,275 68,270" />
+        <polygon points="420,250 432,270 455,275 438,290 442,315 420,304 398,315 402,290 385,275 408,270" />
+    </g>
+</svg>
+
