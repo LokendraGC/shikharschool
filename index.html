@@ -41,7 +41,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar scrolled">
         <div class="container">
             <div class="logo">
                 <img class="logo-emblem" src="logo.png" alt="Shree Shikhar Secondary School Logo">
@@ -63,14 +63,14 @@
                     <ul class="dropdown-menu">
                         <li><a href="#downloads">Downloads</a></li>
                         <li><a href="results.pdf" target="_blank" rel="noopener">Results PDF</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact-form">Contact Form</a></li>
                         <li><a href="#videos">Videos</a></li>
                     </ul>
                 </li>
                 <li><a href="#activities">Activities</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#blog">News</a></li>
-                <li><a href="#contact" class="btn-primary">Contact</a></li>
+                <li><a href="#contact" class="contact-btn btn-primary">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <i class="fa-solid fa-bars"></i>
@@ -98,10 +98,6 @@
         <!-- <div class="hero-overlay"></div> -->
         <div class="hero-content">
             <h1 class="hero-title">Shree Shikhar Secondary School</h1>
-            <div class="hero-btns">
-                <a href="#about" class="btn-primary">Learn More</a>
-                <a href="#contact" class="btn-secondary">Admissions</a>
-            </div>
         </div>
         <div class="hero-controls">
             <button class="hero-control hero-prev" aria-label="Previous slide">
@@ -112,9 +108,7 @@
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
         </div>
-        <div class="scroll-down">
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
+                
     </header>
 
     <!-- About Section -->
@@ -152,29 +146,6 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Students</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="counter" data-target="80">0</h3>
-                    <p>Teachers</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="counter" data-target="50">0</h3>
-                    <p>Classrooms</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="counter" data-target="100">0</h3>
-                    <p>% Pass Rate</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Academics Section -->
     <section id="academics" class="section academics">
@@ -215,6 +186,30 @@
             </div>
         </div>
     </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="1500">0</h3>
+                        <p>Students</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="80">0</h3>
+                        <p>Teachers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="50">0</h3>
+                        <p>Classrooms</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="100">0</h3>
+                        <p>% Pass Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- Events Section -->
     <section id="events" class="section events">
@@ -262,152 +257,93 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="section blog">
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="section contact-form-section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Latest News</span>
-                <h2 class="section-title">School Blog</h2>
-                <div class="line"></div>
-            </div>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <div class="placeholder-img"
-                            style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center;">
-                            Blog Image 1</div>
+            <div class="form-container">
+                <div class="form-content">
+                    <div class="form-header">
+                        <h2 class="form-title">We Can Help You</h2>
+                        <p class="form-description">Enter your details and get a free counselling session with our experts so they can connect you to the right course, country, university – and even scholarships.</p>
                     </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fa-regular fa-user"></i> Admin</span>
-                            <span><i class="fa-regular fa-calendar"></i> July 20, 2024</span>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span>*</span></label>
+                                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="middleName">Middle Name</label>
+                                <input type="text" id="middleName" name="middleName" placeholder="Middle Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span>*</span></label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                            </div>
                         </div>
-                        <h3>Celebrating 70 Years of Excellence</h3>
-                        <p>Our school marks a significant milestone in providing quality education to the community...
-                        </p>
-                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <div class="placeholder-img"
-                            style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center;">
-                            Blog Image 2</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fa-regular fa-user"></i> Principal</span>
-                            <span><i class="fa-regular fa-calendar"></i> June 15, 2024</span>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address <span>*</span></label>
+                                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Mobile Number <span>*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required>
+                            </div>
                         </div>
-                        <h3>New Computer Lab Inauguration</h3>
-                        <p>We are proud to announce the opening of our state-of-the-art computer laboratory...</p>
-                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <div class="placeholder-img"
-                            style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center;">
-                            Blog Image 3</div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fa-regular fa-user"></i> Sports Dept</span>
-                            <span><i class="fa-regular fa-calendar"></i> May 30, 2024</span>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="destination">Your Preferred Study Destination <span>*</span></label>
+                                <select id="destination" name="destination" required>
+                                    <option value="">Select</option>
+                                    <option value="nepal">Nepal</option>
+                                    <option value="india">India</option>
+                                    <option value="usa">USA</option>
+                                    <option value="uk">UK</option>
+                                    <option value="australia">Australia</option>
+                                    <option value="canada">Canada</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="startDate">When Would You Like To Start? <span>*</span></label>
+                                <select id="startDate" name="startDate" required>
+                                    <option value="">Select</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                </select>
+                            </div>
                         </div>
-                        <h3>Inter-School Football Tournament</h3>
-                        <p>Our school team has qualified for the district level finals after a thrilling match...</p>
-                        <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="counsellingMode">Preferred Mode Of Counselling <span>*</span></label>
+                                <select id="counsellingMode" name="counsellingMode" required>
+                                    <option value="">Select</option>
+                                    <option value="online">Online</option>
+                                    <option value="offline">Offline</option>
+                                    <option value="both">Both</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="studyLevel">Preferred Study Level <span>*</span></label>
+                                <select id="studyLevel" name="studyLevel" required>
+                                    <option value="">Select</option>
+                                    <option value="undergraduate">Undergraduate</option>
+                                    <option value="graduate">Graduate</option>
+                                    <option value="postgraduate">Postgraduate</option>
+                                    <option value="diploma">Diploma</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary form-submit-btn">Submit</button>
+                    </form>
+                </div>
+                <div class="form-image">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Counselling expert" loading="lazy">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="section gallery">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Campus Life</span>
-                <h2 class="section-title">Our Gallery</h2>
-                <div class="line"></div>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-caption="Science Lab Immersion"
-                    data-full="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80"
-                    role="button" tabindex="0" aria-label="Open Science Lab Immersion photo">
-                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80"
-                        alt="Students working together in a science laboratory" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span>Science Lab Immersion</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-caption="Cultural Parade"
-                    data-full="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=2000&q=80"
-                    role="button" tabindex="0" aria-label="Open Cultural Parade photo">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80"
-                        alt="Students smiling outdoors during a cultural event" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span>Cultural Parade</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-caption="Innovation Hub"
-                    data-full="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=2000&q=80"
-                    role="button" tabindex="0" aria-label="Open Innovation Hub photo">
-                    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=80"
-                        alt="Teacher guiding students in a modern computer lab" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span>Innovation Hub</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-caption="Championship Match"
-                    data-full="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=2000&q=80"
-                    role="button" tabindex="0" aria-label="Open Championship Match photo">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
-                        alt="Students celebrating during a football game" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span>Championship Match</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-caption="Art Studio Focus"
-                    data-full="https://images.unsplash.com/photo-1516383607781-913a19294fd1?auto=format&fit=crop&w=2000&q=80"
-                    role="button" tabindex="0" aria-label="Open Art Studio Focus photo">
-                    <img src="https://images.unsplash.com/photo-1516383607781-913a19294fd1?auto=format&fit=crop&w=1000&q=80"
-                        alt="Student concentrating on an art project" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span>Art Studio Focus</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-caption="Morning Assembly"
-                    data-full="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=2000&q=80"
-                    role="button" tabindex="0" aria-label="Open Morning Assembly photo">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80"
-                        alt="Morning assembly with students lined up outdoors" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span>Morning Assembly</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-caption="Robotics Club"
-                    data-full="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=2000&q=80"
-                    role="button" tabindex="0" aria-label="Open Robotics Club photo">
-                    <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=900&q=80"
-                        alt="Students experimenting with robotics projects" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span>Robotics Club</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-caption="Library Retreat"
-                    data-full="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=2000&q=80"
-                    role="button" tabindex="0" aria-label="Open Library Retreat photo">
-                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80"
-                        alt="Students reading books in a cozy library" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span>Library Retreat</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-actions">
-                <a href="gallery.html" class="btn-primary view-more-link">View More Photos</a>
             </div>
         </div>
     </section>
@@ -552,14 +488,76 @@
         </div>
     </div>
 
+        <!-- Blog Section -->
+        <section id="blog" class="section blog">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Latest News</span>
+                    <h2 class="section-title">School Blog</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <div class="placeholder-img"
+                                style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center;">
+                                Blog Image 1</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-user"></i> Admin</span>
+                                <span><i class="fa-regular fa-calendar"></i> July 20, 2024</span>
+                            </div>
+                            <h3>Celebrating 70 Years of Excellence</h3>
+                            <p>Our school marks a significant milestone in providing quality education to the community...
+                            </p>
+                            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <div class="placeholder-img"
+                                style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center;">
+                                Blog Image 2</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-user"></i> Principal</span>
+                                <span><i class="fa-regular fa-calendar"></i> June 15, 2024</span>
+                            </div>
+                            <h3>New Computer Lab Inauguration</h3>
+                            <p>We are proud to announce the opening of our state-of-the-art computer laboratory...</p>
+                            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <div class="placeholder-img"
+                                style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center;">
+                                Blog Image 3</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-user"></i> Sports Dept</span>
+                                <span><i class="fa-regular fa-calendar"></i> May 30, 2024</span>
+                            </div>
+                            <h3>Inter-School Football Tournament</h3>
+                            <p>Our school team has qualified for the district level finals after a thrilling match...</p>
+                            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     <!-- Footer -->
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-brand">
-                        <img src="logo.png" alt="Shree Shikhar Secondary School Logo">
-                        <div>
+                    <div class="logo">
+                        <img class="logo-emblem" src="logo.png" alt="Shree Shikhar Secondary School Logo">
+                        <div class="brand-text">
                             <span>Shree Shikhar Secondary School</span>
                             <small>Learning • Leadership • Legacy</small>
                         </div>
@@ -595,7 +593,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Shree Shikhar Secondary School. All Rights Reserved.</p>
+                <p>&copy; 2025 Shree Shikhar Secondary School. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
