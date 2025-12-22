@@ -505,13 +505,32 @@ document.addEventListener('DOMContentLoaded', () => {
             showImage(nextIndex);
         };
 
-        galleryItems.forEach((item, index) => {
-            const triggerOpen = () => openLightbox(index);
+        // Store original gallery items for index lookup
+        const originalGalleryItems = Array.from(galleryItems);
+        
+        // Add click handlers to all gallery items (including clones)
+        document.querySelectorAll('.gallery-item').forEach((item) => {
+            const triggerOpen = (e) => {
+                // Prevent lightbox if we just dragged (check shared drag state)
+                if (window.carouselDragState && window.carouselDragState.hasDragged) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return;
+                }
+                // Find the real index by matching data attributes
+                const fullImage = item.dataset.full;
+                const realIndex = originalGalleryItems.findIndex(originalItem => 
+                    originalItem.dataset.full === fullImage
+                );
+                if (realIndex >= 0) {
+                    openLightbox(realIndex);
+                }
+            };
             item.addEventListener('click', triggerOpen);
             item.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault();
-                    triggerOpen();
+                    triggerOpen(event);
                 }
             });
         });
@@ -535,6 +554,218 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (event.key === 'ArrowLeft') {
                 navigate(-1);
             }
+        });
+    }
+
+    // Gallery Carousel
+    const carousel = document.querySelector('.gallery-carousel');
+    const carouselTrack = document.querySelector('.carousel-track');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const carouselPrev = document.querySelector('.carousel-prev');
+    const carouselNext = document.querySelector('.carousel-next');
+
+    // Shared drag state for preventing clicks during drag
+    const carouselDragState = window.carouselDragState || { hasDragged: false };
+    window.carouselDragState = carouselDragState;
+
+    if (carousel && carouselTrack && carouselSlides.length) {
+        // Clone slides for seamless loop
+        const firstSlide = carouselSlides[0].cloneNode(true);
+        const lastSlide = carouselSlides[carouselSlides.length - 1].cloneNode(true);
+        firstSlide.classList.add('clone', 'clone-first');
+        lastSlide.classList.add('clone', 'clone-last');
+        carouselTrack.insertBefore(lastSlide, carouselSlides[0]);
+        carouselTrack.appendChild(firstSlide);
+
+        // Get all slides including clones
+        const allSlides = carouselTrack.querySelectorAll('.carousel-slide');
+        const totalSlides = carouselSlides.length;
+        
+        // Start with middle image (accounting for clone at start)
+        let currentSlideIndex = Math.floor(totalSlides / 2) + 1; // +1 for clone at start
+        let isDragging = false;
+        let startX = 0;
+        let currentX = 0;
+        let translateX = 0;
+        let dragDistance = 0;
+        let isTransitioning = false;
+
+        const slideWidth = 600;
+        const gap = 30;
+        const totalSlideWidth = slideWidth + gap;
+
+        const getRealIndex = (index) => {
+            // Convert virtual index to real index (0 to totalSlides - 1)
+            if (index < 1) {
+                return totalSlides - 1; // Clone at start = last real slide
+            } else if (index > totalSlides) {
+                return 0; // Clone at end = first real slide
+            }
+            return index - 1; // -1 because clone is at position 0
+        };
+
+        const updateCarousel = (smooth = true) => {
+            const realIndex = getRealIndex(currentSlideIndex);
+            
+            allSlides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlideIndex) {
+                    slide.classList.add('active');
+                }
+            });
+
+            const carouselWidth = carousel.offsetWidth;
+            const centerPosition = (carouselWidth / 2) - (slideWidth / 2);
+            const targetOffset = centerPosition - (currentSlideIndex * totalSlideWidth);
+
+            if (smooth && !isTransitioning) {
+                carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                carouselTrack.style.transform = `translateX(${targetOffset}px)`;
+            } else {
+                carouselTrack.style.transition = 'none';
+                carouselTrack.style.transform = `translateX(${targetOffset}px)`;
+            }
+        };
+
+        const checkLoop = () => {
+            // If we're at the clone at the start, jump to the real last slide
+            if (currentSlideIndex === 0) {
+                isTransitioning = true;
+                currentSlideIndex = totalSlides;
+                updateCarousel(false);
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 50);
+            }
+            // If we're at the clone at the end, jump to the real first slide
+            else if (currentSlideIndex === allSlides.length - 1) {
+                isTransitioning = true;
+                currentSlideIndex = 1;
+                updateCarousel(false);
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 50);
+            }
+        };
+
+        const goToSlide = (index, smooth = true) => {
+            currentSlideIndex = index;
+            updateCarousel(smooth);
+            
+            // Check for loop after transition completes
+            if (smooth) {
+                setTimeout(() => {
+                    checkLoop();
+                }, 600);
+            } else {
+                checkLoop();
+            }
+        };
+
+        const nextSlide = () => {
+            goToSlide(currentSlideIndex + 1);
+        };
+
+        const prevSlide = () => {
+            goToSlide(currentSlideIndex - 1);
+        };
+
+        // Drag functionality
+        const handleDragStart = (e) => {
+            isDragging = true;
+            carouselDragState.hasDragged = false;
+            dragDistance = 0;
+            startX = e.clientX || e.touches[0].clientX;
+            carouselTrack.style.transition = 'none';
+            carousel.style.cursor = 'grabbing';
+            isTransitioning = false;
+        };
+
+        const handleDragMove = (e) => {
+            if (!isDragging) return;
+            
+            e.preventDefault();
+            currentX = e.clientX || e.touches[0].clientX;
+            const diffX = currentX - startX;
+            dragDistance = Math.abs(diffX);
+            
+            // Mark as dragged if moved more than 5px
+            if (dragDistance > 5) {
+                carouselDragState.hasDragged = true;
+            }
+            
+            const carouselWidth = carousel.offsetWidth;
+            const centerPosition = (carouselWidth / 2) - (slideWidth / 2);
+            const baseOffset = centerPosition - (currentSlideIndex * totalSlideWidth);
+            
+            translateX = baseOffset + diffX;
+            carouselTrack.style.transform = `translateX(${translateX}px)`;
+        };
+
+        const handleDragEnd = () => {
+            if (!isDragging) return;
+            
+            isDragging = false;
+            carousel.style.cursor = 'grab';
+            
+            const carouselWidth = carousel.offsetWidth;
+            const centerPosition = (carouselWidth / 2) - (slideWidth / 2);
+            const baseOffset = centerPosition - (currentSlideIndex * totalSlideWidth);
+            const diffX = translateX - baseOffset;
+            
+            // Determine if we should move to next/prev slide
+            const threshold = slideWidth * 0.25;
+            
+            if (Math.abs(diffX) > threshold && carouselDragState.hasDragged) {
+                if (diffX > 0) {
+                    prevSlide();
+                } else {
+                    nextSlide();
+                }
+            } else {
+                // Snap back to current slide
+                updateCarousel();
+            }
+            
+            // Reset drag state after a short delay
+            setTimeout(() => {
+                carouselDragState.hasDragged = false;
+            }, 100);
+        };
+
+        // Mouse events
+        carousel.addEventListener('mousedown', handleDragStart);
+        carousel.addEventListener('mousemove', handleDragMove);
+        carousel.addEventListener('mouseup', handleDragEnd);
+        carousel.addEventListener('mouseleave', handleDragEnd);
+
+        // Touch events
+        carousel.addEventListener('touchstart', handleDragStart, { passive: false });
+        carousel.addEventListener('touchmove', handleDragMove, { passive: false });
+        carousel.addEventListener('touchend', handleDragEnd);
+
+        // Navigation buttons
+        if (carouselNext) {
+            carouselNext.addEventListener('click', nextSlide);
+        }
+
+        if (carouselPrev) {
+            carouselPrev.addEventListener('click', prevSlide);
+        }
+
+        // Set cursor style
+        carousel.style.cursor = 'grab';
+
+        // Initialize carousel with middle image
+        updateCarousel(false);
+
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateCarousel(false);
+            }, 250);
         });
     }
 
