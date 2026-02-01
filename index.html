@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -44,8 +44,8 @@
     <nav class="navbar scrolled">
         <div class="container">
             <div class="logo">
-                <img class="logo-emblem" src="logo.png" alt="Shree Shikhar Secondary School Logo">
-                <div class="brand-text">
+                <img class="logo-emblem" src="assets/images/logo.png" alt="Shree Shikhar Secondary School Logo">
+                <div class="brand-text header-logo-text">
                     <span>Shree Shikhar Secondary School</span>
                     <small>Learning • Leadership • Legacy</small>
                 </div>
@@ -54,23 +54,33 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="index.html#home">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle" aria-expanded="false">
+                        About Us <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mission.html">Mission</a></li>
+                        <li><a href="vision.html">Vision</a></li>
+                    </ul>
+                </li>
                 <li class="nav-dropdown">
                     <a href="#" class="dropdown-toggle" aria-expanded="false">
                         Resources <i class="fa-solid fa-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#downloads">Downloads</a></li>
+                        <li><a href="downloads.html">Downloads</a></li>
                         <li><a href="results.pdf" target="_blank" rel="noopener">Results PDF</a></li>
-                        <li><a href="#contact-form">Contact Form</a></li>
-                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="index.html#contact-form">Contact Form</a></li>
+                        <li><a href="videos.html">Videos</a></li>
                     </ul>
                 </li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#blog">News</a></li>
-                <li><a href="#contact" class="contact-btn btn-primary">Contact</a></li>
+                <li><a href="index.html#activities">Activities</a></li>
+                <li><a href="teachers.html">Team</a></li>
+
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#contact" class="contact-btn btn-primary">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <i class="fa-solid fa-bars"></i>
@@ -83,15 +93,13 @@
     <header id="home" class="hero">
         <div class="hero-slider" data-autoplay="true" data-interval="5000">
             <div class="hero-slide active">
-                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1800&q=80"
-                    alt="Students engaged in a science lab activity">
+                <img src="assets/images/shikhar_school.webp" alt="Students engaged in a science lab activity">
             </div>
             <div class="hero-slide">
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=80"
-                    alt="Group of students smiling during cultural parade">
+                <img src="assets/images/teachers_shikhar.webp" alt="Group of students smiling during cultural parade">
             </div>
             <div class="hero-slide">
-                <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=80"
+                <img src="assets/images/tour_shikhar_school.webp"
                     alt="Teacher supporting students in a modern computer lab">
             </div>
         </div>
@@ -108,7 +116,7 @@
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
         </div>
-                
+
     </header>
 
     <!-- About Section -->
@@ -122,7 +130,7 @@
             <div class="about-grid">
                 <div class="about-image">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?auto=format&fit=crop&w=1600&q=80"
+                        <img src="assets/images/shikhar_school.webp"
                             alt="Students collaborating inside a modern classroom at Shree Shikhar Secondary School">
                     </div>
                     <div class="experience-badge">
@@ -187,29 +195,29 @@
         </div>
     </section>
 
-        <!-- Stats Section -->
-        <section class="stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <h3 class="counter" data-target="1500">0</h3>
-                        <p>Students</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 class="counter" data-target="80">0</h3>
-                        <p>Teachers</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 class="counter" data-target="50">0</h3>
-                        <p>Classrooms</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 class="counter" data-target="100">0</h3>
-                        <p>% Pass Rate</p>
-                    </div>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="1500">0</h3>
+                    <p>Students</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="80">0</h3>
+                    <p>Teachers</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="50">0</h3>
+                    <p>Classrooms</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="100">0</h3>
+                    <p>% Pass Rate</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- Events Section -->
     <section id="events" class="section events">
@@ -264,7 +272,9 @@
                 <div class="form-content">
                     <div class="form-header">
                         <h2 class="form-title">We Can Help You</h2>
-                        <p class="form-description">Enter your details and get a free counselling session with our experts so they can connect you to the right course, country, university – and even scholarships.</p>
+                        <p class="form-description">Enter your details and get a free counselling session with our
+                            experts so they can connect you to the right course, country, university – and even
+                            scholarships.</p>
                     </div>
                     <form class="contact-form" action="#" method="POST">
                         <div class="form-row">
@@ -341,7 +351,8 @@
                 </div>
                 <div class="form-image">
                     <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Counselling expert" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                            alt="Counselling expert" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -445,8 +456,10 @@
             </div>
             <div class="videos-grid">
                 <div class="video-card">
-                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0" aria-label="Play School Tour Video">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80" alt="School Campus Tour" loading="lazy">
+                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0"
+                        aria-label="Play School Tour Video">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+                            alt="School Campus Tour" loading="lazy">
                         <div class="video-overlay">
                             <div class="play-button">
                                 <i class="fa-solid fa-play"></i>
@@ -461,8 +474,10 @@
                     </div>
                 </div>
                 <div class="video-card">
-                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0" aria-label="Play Annual Day Celebration Video">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Annual Day Celebration" loading="lazy">
+                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0"
+                        aria-label="Play Annual Day Celebration Video">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+                            alt="Annual Day Celebration" loading="lazy">
                         <div class="video-overlay">
                             <div class="play-button">
                                 <i class="fa-solid fa-play"></i>
@@ -477,8 +492,10 @@
                     </div>
                 </div>
                 <div class="video-card">
-                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0" aria-label="Play Science Fair Video">
-                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" alt="Science Fair Exhibition" loading="lazy">
+                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0"
+                        aria-label="Play Science Fair Video">
+                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80"
+                            alt="Science Fair Exhibition" loading="lazy">
                         <div class="video-overlay">
                             <div class="play-button">
                                 <i class="fa-solid fa-play"></i>
@@ -493,8 +510,10 @@
                     </div>
                 </div>
                 <div class="video-card">
-                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0" aria-label="Play Sports Day Video">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Sports Day Event" loading="lazy">
+                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0"
+                        aria-label="Play Sports Day Video">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+                            alt="Sports Day Event" loading="lazy">
                         <div class="video-overlay">
                             <div class="play-button">
                                 <i class="fa-solid fa-play"></i>
@@ -509,8 +528,10 @@
                     </div>
                 </div>
                 <div class="video-card">
-                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0" aria-label="Play Graduation Ceremony Video">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80" alt="Graduation Ceremony" loading="lazy">
+                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0"
+                        aria-label="Play Graduation Ceremony Video">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+                            alt="Graduation Ceremony" loading="lazy">
                         <div class="video-overlay">
                             <div class="play-button">
                                 <i class="fa-solid fa-play"></i>
@@ -525,8 +546,10 @@
                     </div>
                 </div>
                 <div class="video-card">
-                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0" aria-label="Play Cultural Festival Video">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Cultural Festival" loading="lazy">
+                    <div class="video-thumbnail" data-video-id="hKxnj1CS1o4" role="button" tabindex="0"
+                        aria-label="Play Cultural Festival Video">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+                            alt="Cultural Festival" loading="lazy">
                         <div class="video-overlay">
                             <div class="play-button">
                                 <i class="fa-solid fa-play"></i>
@@ -554,7 +577,9 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="video-wrapper">
-                <iframe class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="video-iframe" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -575,67 +600,77 @@
         </div>
     </div>
 
-        <!-- Blog Section -->
-        <section id="blog" class="section blog">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Latest News</span>
-                    <h2 class="section-title">School Blog</h2>
-                    <div class="line"></div>
+    <!-- Blog Section -->
+    <section id="blog" class="section blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Latest News</span>
+                <h2 class="section-title">School Blog</h2>
+                <div class="line"></div>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card" onclick="window.location.href='blog-details.html?id=celebrating-70-years'">
+                    <div class="blog-img">
+                        <img src="assets/images/shikhar_school.webp" alt="School Anniversary">
+                        <div class="blog-date">
+                            <span class="day">20</span>
+                            <span class="month">Jul</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-user"></i> Admin</span>
+                            <span><i class="fa-regular fa-calendar"></i> July 20, 2024</span>
+                        </div>
+                        <h3>Celebrating 70 Years of Excellence</h3>
+                        <p>Our school marks a significant milestone in providing quality education to the community...
+                        </p>
+                        <a href="blog-details.html?id=celebrating-70-years" class="read-more">Read More <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="blog-grid">
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <div class="placeholder-img"
-                                style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center;">
-                                Blog Image 1</div>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fa-regular fa-user"></i> Admin</span>
-                                <span><i class="fa-regular fa-calendar"></i> July 20, 2024</span>
-                            </div>
-                            <h3>Celebrating 70 Years of Excellence</h3>
-                            <p>Our school marks a significant milestone in providing quality education to the community...
-                            </p>
-                            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="blog-card" onclick="window.location.href='blog-details.html?id=computer-lab-inauguration'">
+                    <div class="blog-img">
+                        <img src="assets/images/tour_shikhar_school.webp" alt="Computer Lab">
+                        <div class="blog-date">
+                            <span class="day">15</span>
+                            <span class="month">Jun</span>
                         </div>
                     </div>
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <div class="placeholder-img"
-                                style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center;">
-                                Blog Image 2</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-user"></i> Principal</span>
+                            <span><i class="fa-regular fa-calendar"></i> June 15, 2024</span>
                         </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fa-regular fa-user"></i> Principal</span>
-                                <span><i class="fa-regular fa-calendar"></i> June 15, 2024</span>
-                            </div>
-                            <h3>New Computer Lab Inauguration</h3>
-                            <p>We are proud to announce the opening of our state-of-the-art computer laboratory...</p>
-                            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3>New Computer Lab Inauguration</h3>
+                        <p>We are proud to announce the opening of our state-of-the-art computer laboratory...</p>
+                        <a href="blog-details.html?id=computer-lab-inauguration" class="read-more">Read More <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card" onclick="window.location.href='blog-details.html?id=football-tournament'">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+                            alt="Football Tournament">
+                        <div class="blog-date">
+                            <span class="day">30</span>
+                            <span class="month">May</span>
                         </div>
                     </div>
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <div class="placeholder-img"
-                                style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center;">
-                                Blog Image 3</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-user"></i> Sports Dept</span>
+                            <span><i class="fa-regular fa-calendar"></i> May 30, 2024</span>
                         </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fa-regular fa-user"></i> Sports Dept</span>
-                                <span><i class="fa-regular fa-calendar"></i> May 30, 2024</span>
-                            </div>
-                            <h3>Inter-School Football Tournament</h3>
-                            <p>Our school team has qualified for the district level finals after a thrilling match...</p>
-                            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
+                        <h3>Inter-School Football Tournament</h3>
+                        <p>Our school team has qualified for the district level finals after a thrilling match...</p>
+                        <a href="blog-details.html?id=football-tournament" class="read-more">Read More <i
+                                class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer id="contact" class="footer">
@@ -643,14 +678,16 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo">
-                        <img class="logo-emblem" src="logo.png" alt="Shree Shikhar Secondary School Logo">
+                        <img class="logo-emblem" src="assets/images/logo.png" alt="Shree Shikhar Secondary School Logo">
                         <div class="brand-text">
                             <span>Shree Shikhar Secondary School</span>
                             <small>Learning • Leadership • Legacy</small>
                         </div>
                     </div>
-                    <p>Shree Shikhar Secondary School nurtures curious minds through purpose-driven academics, compassionate mentorship, and culture-rich experiences. We champion innovation while honoring tradition.</p>
-                   
+                    <p>Shree Shikhar Secondary School nurtures curious minds through purpose-driven academics,
+                        compassionate mentorship, and culture-rich experiences. We champion innovation while honoring
+                        tradition.</p>
+
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -680,7 +717,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Shree Shikhar Secondary School. All Rights Reserved.</p>
+                <p>&copy; 2026 Shree Shikhar Secondary School. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -688,7 +725,7 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Shree Shikhar Secondary School</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-      <!-- Top Bar -->
-      <div class="top-bar">
+    <!-- Top Bar -->
+    <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
                 <a href="mailto:info@school.edu.np"><i class="fa-solid fa-envelope"></i> info@school.edu.np</a>
@@ -44,7 +45,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <img class="logo-emblem" src="logo.png" alt="Shree Shikhar Secondary School Logo">
+                <img class="logo-emblem" src="assets/images/logo.png" alt="Shree Shikhar Secondary School Logo">
                 <div class="brand-text">
                     <span>Shree Shikhar Secondary School</span>
                     <small>Learning • Leadership • Legacy</small>
@@ -54,22 +55,33 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="index.html#home">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle" aria-expanded="false">
+                        About Us <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mission.html">Mission</a></li>
+                        <li><a href="vision.html">Vision</a></li>
+                    </ul>
+                </li>
                 <li class="nav-dropdown">
                     <a href="#" class="dropdown-toggle" aria-expanded="false">
                         Resources <i class="fa-solid fa-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#downloads">Downloads</a></li>
+                        <li><a href="downloads.html">Downloads</a></li>
                         <li><a href="results.pdf" target="_blank" rel="noopener">Results PDF</a></li>
-                        <li><a href="#activities">Activities</a></li>
+                        <li><a href="index.html#contact-form">Contact Form</a></li>
+                        <li><a href="videos.html">Videos</a></li>
                     </ul>
                 </li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#blog">News</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact" class="btn-primary">Contact</a></li>
+                <li><a href="index.html#activities">Activities</a></li>
+                <li><a href="teachers.html">Team</a></li>
+
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#contact" class="contact-btn btn-primary">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <i class="fa-solid fa-bars"></i>
@@ -83,13 +95,13 @@
     <section class="page-banner gallery-banner">
         <div class="container">
             <div class="breadcrumb-content">
-                <h1 class="hero-title">Campus Gallery</h1>
+                <h1 class="hero-title">Gallery</h1>
                 <nav class="breadcrumb" aria-label="Breadcrumb">
                     <a href="index.html">Home</a>
                     <span>/</span>
                     <span>Gallery</span>
                 </nav>
-            </div> 
+            </div>
         </div>
     </section>
 
@@ -215,26 +227,38 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo white">
-                        <img class="logo-emblem" src="logo.png" alt="Shree Shikhar Secondary School Logo">
+                    <div class="logo">
+                        <img class="logo-emblem" src="assets/images/logo.png" alt="Shree Shikhar Secondary School Logo">
                         <div class="brand-text">
                             <span>Shree Shikhar Secondary School</span>
                             <small>Learning • Leadership • Legacy</small>
                         </div>
                     </div>
-                    <p>Empowering students to become responsible citizens and future leaders of Nepal.</p>
+                    <p>Shree Shikhar Secondary School nurtures curious minds through purpose-driven academics,
+                        compassionate mentorship, and culture-rich experiences. We champion innovation while honoring
+                        tradition.</p>
+
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#academics">Academics</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#academics">Academics</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#downloads">Downloads</a></li>
+                        <li><a href="#downloads">Newsletter</a></li>
+                        <li><a href="#activities">Student Activities</a></li>
+                        <li><a href="#blog">News & Stories</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -247,7 +271,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Shree Shikhar Secondary School. All Rights Reserved.</p>
+                <p>&copy; 2026 Shree Shikhar Secondary School. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -271,8 +295,7 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
-
